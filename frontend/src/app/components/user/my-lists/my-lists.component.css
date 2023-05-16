@@ -1,0 +1,33 @@
+table {
+    width: 100%;
+  }table{
+    text-align: left;
+    color: rgb(17, 17, 18);
+   min-width: 1300px;
+    border-collapse: collapse;
+  
+
+}
+table td, table th{
+    border: 1px solid rgb(17, 17, 18);
+    padding: 10px;
+    min-height: 160px;
+    font-weight: 600;
+    font-size: 20px;
+}
+img{
+    width: 150px;
+    height: 150px;
+}
+i{
+    width: fit-content;
+    font-size: larger;
+}
+button{
+    width: 90px;
+    padding:5px;
+    color:white;
+    background-color: tomato;
+    border-radius: 5px;
+    border: 2px solid white;
+}

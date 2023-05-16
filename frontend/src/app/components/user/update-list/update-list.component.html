@@ -1,0 +1,13 @@
+<div class="container">
+    <p>CreateList Form</p>
+    <form [formGroup]="updateForm" (ngSubmit)="Update(updateForm.value)">
+        <input type="text" name="Email" formControlName="title" placeholder="enter your title" ngModel="{{my_list?.my_list.title}}" />
+        <br>
+        <input type="text" name="desc" formControlName="description"  placeholder="enter description" ngModel="{{my_list?.my_list.description}}" />
+        <br>
+        <!-- <input type="text" name="user"formControlName="user"  placeholder="enter your user Id" ngModel="{{user_Id}}" /> -->
+        <br>
+        <button type="submit">updateList</button>
+
+    </form>
+</div>

@@ -1,0 +1,14 @@
+.header{
+    display: flex;
+    justify-content: space-around;
+    background-color: #FEFF86;
+    height: 50px ;   
+   
+}
+
+.header > a{
+    color:tomato;
+}
+.header > h2{
+    color: #1d1d1b;;
+}

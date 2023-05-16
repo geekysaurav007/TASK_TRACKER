@@ -1,0 +1,30 @@
+
+<hr>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Update</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+
+    <tbody>
+        <tr *ngFor="let item of my_list ">
+
+            <td>{{item._id|titlecase}}</td>
+            <td>{{item.title}}</td>
+            <td>{{item.description|titlecase}}</td>
+            <td>{{item.status}}</td>
+
+            <td><button (click)=" updateMylist(item._id)">update</button></td>
+            <td><a href="#"><i class='bx bxs-trash bx-burst' (click)="deleteMylist(item._id)"></i></a></td>
+
+        </tr>
+    </tbody>
+
+</table>

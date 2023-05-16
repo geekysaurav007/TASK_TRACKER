@@ -1,0 +1,14 @@
+<!-- tittle,desc,user -->
+<div class="container">
+    <p>CreateList Form</p>
+    <form [formGroup]="submitForm" (ngSubmit)="Submit(submitForm.value)" >
+        <input type="text" name="Email" formControlName="title" placeholder="enter your title" />
+        <br>
+        <input type="text" name="desc" formControlName="description" placeholder="enter description" />
+        <br>
+        <input type="text" name="user" formControlName="user"  placeholder="enter your user Id" ngModel="{{this.user}}" />
+        <br>
+        <button type="submit">CreateList</button>
+
+    </form>
+</div>

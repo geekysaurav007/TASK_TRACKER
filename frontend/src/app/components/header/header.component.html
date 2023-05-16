@@ -1,0 +1,13 @@
+<div class="header" *ngIf="!getTokengo()">
+    <h2>MY TO-DO LIST</h2>
+    <a routerLink="/login">LOGIN</a>
+    <a routerLink="/">SIGNUP</a>
+    <a routerLink="/home">HOME</a>
+</div>
+
+<div class="header" *ngIf="this.userservice.isUser">
+    <h2>MY TO-DO LIST</h2>
+    <a routerLink="user/myprofile/{{this.id}}">myprofile</a>
+    <a routerLink="user/create">createList</a>
+    <a href="" (click)="logOut()">Logout</a>
+</div>

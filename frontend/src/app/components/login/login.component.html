@@ -1,0 +1,14 @@
+<div class="container">
+    <span *ngIf="errorMessage">{{errorMessage}}</span>
+
+    <p>LOGIN FORM</p>
+    <form [formGroup]="loginForm" (ngSubmit)="Login(loginForm.value)">
+        <input type="text" name="Email" formControlName="email" placeholder="enter your email" />
+        <br>
+        <input type="password" name="password" formControlName="password" placeholder="enter your email" />
+        <br>
+    
+        <button type="submit">Login</button>
+
+    </form>
+</div>
