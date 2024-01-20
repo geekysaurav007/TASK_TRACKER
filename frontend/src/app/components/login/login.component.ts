@@ -30,8 +30,10 @@ export class LoginComponent implements OnInit {
   }
 
   clickerr() {
+    const check=document.getElementById('checkbox') as HTMLInputElement;
+    console.log()
     const pass = document.getElementById('Password') as HTMLInputElement;
-    if (pass.type == 'password') {
+    if (check.checked) {
       pass.type = 'text';
     } else {
       pass.type = 'password';
