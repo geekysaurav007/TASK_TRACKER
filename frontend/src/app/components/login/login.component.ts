@@ -37,4 +37,7 @@ export class LoginComponent implements OnInit {
       pass.type = 'password';
     }
   }
+  clickerr2(data:any){
+    console.log(data)
+  }
 }

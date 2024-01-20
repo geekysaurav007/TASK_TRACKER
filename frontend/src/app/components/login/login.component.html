@@ -2,13 +2,14 @@
   <span *ngIf="errorMessage">{{ errorMessage }}</span>
   <p>LOGIN FORM</p>
   <form [formGroup]="loginForm" (ngSubmit)="Login(loginForm.value)">
-    <label for="Password">Email:</label>
+    <label for="Email">Email:</label>
     <input
       type="text"
       name="Email"
       formControlName="email"
       placeholder="enter your email"
     />
+    <span *ngIf="loginForm.get('email')?.invalid">enter valid mail</span>
     <br />
     <label for="Password">Password:</label>
     <input
@@ -20,7 +21,7 @@
     />
     <br />
     <label for="showPassword">Show Password</label>
-    <input type="checkbox" (click)="clickerr()" class="checkbox"/>
-    <button type="submit">Login</button>
+    <input type="checkbox" (click)="clickerr()" class="checkbox" />
+    <button type="submit" [disabled]="loginForm.invalid">Login</button>
   </form>
 </div>
