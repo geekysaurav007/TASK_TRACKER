@@ -52,9 +52,6 @@ export class UserserviceService {
           this.router.navigate(['user/mylist'])
         }
       }
-    }, (error) => {
-      console.warn(error.error.error)
-      window.alert(`you have error=> ${error.error.error}`)
     })
 
   }

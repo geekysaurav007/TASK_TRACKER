@@ -8,7 +8,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { HeaderComponent } from './components/header/header.component';
 import{FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FooterComponent } from './components/footer/footer.component'
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { MyListsComponent } from './components/user/my-lists/my-lists.component';
 import { MyProfileComponent } from './components/user/my-profile/my-profile.component';
 import { HomeComponent } from './components/home/home.component';
@@ -23,6 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
 import { UpdateListComponent } from './components/user/update-list/update-list.component';
+import { HttperrorInterceptorInterceptor } from './services/httperror-interceptor.interceptor';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { UpdateListComponent } from './components/user/update-list/update-list.c
     BrowserAnimationsModule,MatCardModule,MatTableModule
     
   ],
-  providers: [AdminAuthGuard,UserAuthGuard],
+  providers: [AdminAuthGuard,UserAuthGuard,
+    {provide:HTTP_INTERCEPTORS,useClass:HttperrorInterceptorInterceptor,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

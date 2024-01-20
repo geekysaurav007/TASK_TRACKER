@@ -21,7 +21,7 @@ const routes: Routes = [
 
   {path:"user",canActivateChild:[UserAuthGuard],children:[
     {path:"mylist",component:MyListsComponent},
-    {path:"myprofile/:id",component:MyProfileComponent},
+    {path:"myprofile/:id",component:MyProfileComponent,pathMatch:"full"},
     {path:"create",component:CreateListComponent},
     {path:"updatelist/:id",component:UpdateListComponent,pathMatch:"full"}
   ],},
