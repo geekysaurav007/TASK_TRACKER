@@ -20,7 +20,9 @@ export class HttperrorInterceptorInterceptor implements HttpInterceptor {
     console.log("HTTP ingterceptor working")
     return next.handle(request).pipe(
       catchError((error:HttpErrorResponse)=>{
-        alert(`you have error=> ${error.error.error}`)
+        alert(`you have error=> ${error.error.error} $ status code =>${error.status}`)
+        console.log();
+        
        
         return throwError(error.error);
         
