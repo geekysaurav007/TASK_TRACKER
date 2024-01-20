@@ -15,7 +15,6 @@ export class HeaderComponent implements OnInit {
   constructor(public userservice:UserserviceService,private router:Router) { }
   
   ngOnInit(): void {
-    
     this.userservice.reloadUser()
     this.id=localStorage.getItem("user_Id") 
     
@@ -34,7 +33,6 @@ export class HeaderComponent implements OnInit {
   logOut(){
     if(localStorage.getItem('auth') ){
       localStorage.clear()
-     
       this.router.navigate(['/login'])
 
     }

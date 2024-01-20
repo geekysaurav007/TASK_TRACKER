@@ -3,7 +3,9 @@ const jwt = require("jsonwebtoken")
 
 function userAuthMiddleware(req, resp, next) {
     try {
+        
         let B_token = req.headers.authorization.split(' ')[1]
+        
         const payload = jwt.verify(B_token, process.env.JWT_KEY)
         req.session = {
             userdata: payload

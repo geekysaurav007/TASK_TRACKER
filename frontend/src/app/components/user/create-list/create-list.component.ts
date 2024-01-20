@@ -20,9 +20,6 @@ export class CreateListComponent implements OnInit {
     user:new FormControl("",Validators.required)
 
   })
-  // getUserId(){
-  //   this.user=localStorage.getItem('user_Id')
-  // }
   ngOnInit(): void {
     this.user=localStorage.getItem('user_Id')
   }
