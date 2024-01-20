@@ -32,8 +32,6 @@ Submit(data:any){
  else{
   alert(`${res['error']}`)
  }
- },(err)=>{
-  alert("you have error")
  })
 }
 

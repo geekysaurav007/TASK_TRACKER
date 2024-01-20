@@ -1,33 +1,40 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms'
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import jwtDecode from 'jwt-decode';
 import { Logintype } from 'src/app/datatypes/logintype';
 
 import { UserserviceService } from '../../services/userservice.service';
 
-
-
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  errorMessage: any = ''
+  errorMessage: any = '';
 
-  constructor(private Loginservice: UserserviceService,
-    public router:Router) { }
+  constructor(
+    private Loginservice: UserserviceService,
+    public router: Router
+  ) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
   loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required])
-  })
+    password: new FormControl('', [Validators.required]),
+  });
 
   Login(data: Logintype) {
-    this.Loginservice.loginService(data)}
+    this.Loginservice.loginService(data);
+  }
 
+  clickerr() {
+    const pass = document.getElementById('Password') as HTMLInputElement;
+    if (pass.type == 'password') {
+      pass.type = 'text';
+    } else {
+      pass.type = 'password';
+    }
+  }
 }

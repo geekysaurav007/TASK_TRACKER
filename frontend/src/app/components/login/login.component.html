@@ -1,14 +1,26 @@
 <div class="container">
-    <span *ngIf="errorMessage">{{errorMessage}}</span>
-
-    <p>LOGIN FORM</p>
-    <form [formGroup]="loginForm" (ngSubmit)="Login(loginForm.value)">
-        <input type="text" name="Email" formControlName="email" placeholder="enter your email" />
-        <br>
-        <input type="password" name="password" formControlName="password" placeholder="enter your email" />
-        <br>
-    
-        <button type="submit">Login</button>
-
-    </form>
+  <span *ngIf="errorMessage">{{ errorMessage }}</span>
+  <p>LOGIN FORM</p>
+  <form [formGroup]="loginForm" (ngSubmit)="Login(loginForm.value)">
+    <label for="Password">Email:</label>
+    <input
+      type="text"
+      name="Email"
+      formControlName="email"
+      placeholder="enter your email"
+    />
+    <br />
+    <label for="Password">Password:</label>
+    <input
+      type="password"
+      name="password"
+      formControlName="password"
+      placeholder="enter your password"
+      id="Password"
+    />
+    <br />
+    <label for="showPassword">Show Password</label>
+    <input type="checkbox" (click)="clickerr()" class="checkbox"/>
+    <button type="submit">Login</button>
+  </form>
 </div>
